@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnerby</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="modal-frame">
+        <div class="modal">
+            <div class="modal-inset">
+                <div class="button close"><i class="fa fa-close"></i></div>
+
+                <div class="modal-body">
+                    <h3>Animated Modal</h3>
+                    <p>Daily coding videos, coding tips & tricks and coding quizzes
+                        <br>
+                        Visite my profile and check other videos
+                    </p>
+                    <p class="ps">
+                        **Check my Bio for Full Code
+                        <br>
+                        <strong>Save</strong> the video for later**
+                    </p>
+                    <strong>
+                        Follow for more...
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+    <button class="fancy-btn open" title="Click Here">SHOW</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $modal = $('.modal-frame');
+            $overlay = $('.modal-overlay');
+            $modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+                if ($modal.hasClass('state-leave')) {
+                    $modal.removeClass('state-leave');
+                }
+            });
+            $('.close').on('click', function () {
+                $overlay.removeClass('state-show');
+                $modal.removeClass('state-appear').addClass('state-leave');
+            });
+            $('.open').on('click', function () {
+                $overlay.addClass('state-show');
+                $modal.removeClass('state-leave').addClass('state-appear');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

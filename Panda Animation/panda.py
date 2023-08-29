@@ -22,6 +22,14 @@ def ring(col, rad):
     # Ending the filling of the color
     pen.end_fill()
  
+##########################Main Section#############################
+ 
+# pen.up             --> move turtle to air
+# pen.down           --> move turtle to ground
+# pen.setpos         --> move turtle to given position
+# ring(color, radius) --> draw a ring of specified color and radius
+###################################################################
+ 
 ##### Draw ears #####
 # Draw first ear
 pen.up()
@@ -87,4 +95,3 @@ pen.down()
 pen.left(360)
 pen.circle(5, -180)
 pen.hideturtle()
-turtle.exitonclick()

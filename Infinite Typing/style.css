@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+body {
+  background: #1f1f1f;
+}
+div.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+div.container > h1 {
+  font-family: Montserrat;
+  position: relative;
+}
+#text {
+  color: powderblue;
+}
+div.container > h1:after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: blink 1s infinite steps(2, start);
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}

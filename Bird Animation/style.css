@@ -1,0 +1,271 @@
+:root {
+  --bird-color: #858585;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1f1f1f;
+  color: white;
+}
+.container {
+  height: 20em;
+  width: 25em;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  animation: fly 2s infinite;
+}
+
+/*Body*/
+.body {
+  position: absolute;
+  height: 5em;
+  width: 12.5em;
+  border: 2px solid #000;
+  background-color: var(--bird-color);
+  border-radius: 0 0 5em 5em;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  perspective: 31.25em;
+}
+/*Eyes*/
+.eye-left {
+  position: absolute;
+  content: "";
+  height: 1.55em;
+  width: 1.55em;
+  background-color: #000;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: 5em;
+  right: 5.5em;
+  animation: blink 3s infinite;
+}
+.eye-left:after {
+  position: absolute;
+  content: "";
+  height: 0.5em;
+  width: 0.5em;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: 0.01em;
+  right: 0.1em;
+  animation: blink 3s infinite;
+}
+/*Eyes*/
+.eye-right {
+  position: absolute;
+  content: "";
+  height: 1.2em;
+  width: 1.2em;
+  background-color: #000;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: 4.85em;
+  right: 4.25em;
+  animation: blink 3s infinite;
+}
+.eye-right:after {
+  position: absolute;
+  content: "";
+  height: 0.4em;
+  width: 0.4em;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: -0.01em;
+  right: -0.1em;
+  animation: blink 3s infinite;
+}
+
+.head {
+  position: absolute;
+  height: 5.5em;
+  width: 7em;
+  background-color: var(--bird-color);
+  border-radius: 50%;
+  top: 4em;
+  right: 4em;
+  border: 2px solid #000;
+}
+
+/*Beak*/
+.beak-upper {
+  position: absolute;
+  height: 1.5em;
+  width: 3em;
+  background-color: #aa4400;
+  top: 5.75em;
+  right: 2.4em;
+  border-radius: 0 70% 0 60%;
+  animation: caw-1 3s infinite;
+  transform-origin: 1%;
+}
+.beak-lower {
+  position: absolute;
+  height: 1em;
+  width: 2.5em;
+  background-color: #cc5300;
+  top: 6em;
+  right: 2.8em;
+  border-radius: 0 70% 0 60%;
+  animation: caw-2 3s infinite;
+  transform-origin: 1%;
+  transform: rotate(0deg);
+}
+
+.wings {
+  position: absolute;
+  height: 0.93em;
+  width: 6.25em;
+  top: 0.5em;
+  right: 3em;
+  animation: flap 2s infinite;
+  transform-style: preserve-3d;
+}
+
+.wing {
+  position: absolute;
+  height: 9em;
+  width: 4.25em;
+  background-color: #111;
+  border-radius: 20em 20em 20em 0;
+  transform: rotate(35deg);
+  background-color: var(--bird-color);
+  border: 2px solid #000;
+}
+
+.tail {
+  height: 1.25em;
+  width: 3.12em;
+  background-color: var(--bird-color);
+  border: 2px solid #000;
+  position: absolute;
+  left: 4.5em;
+  top: 7.5em;
+  border-radius: 1.25em;
+  transform: rotate(-5deg);
+  animation: wiggle 0.6s infinite;
+}
+
+.tail:before,
+.tail:after {
+  content: "";
+  height: 1.25em;
+  width: 3.12em;
+  background-color: var(--bird-color);
+  border: 2px solid #000;
+  position: absolute;
+  transform-origin: right;
+  border-radius: 1.25em;
+}
+.tail:after {
+  transform: rotate(35deg);
+}
+.tail:before {
+  transform: rotate(-35deg);
+}
+.leg-1,
+.leg-2 {
+  position: absolute;
+  height: 3.5em;
+  width: 1.25em;
+  bottom: 5.37em;
+  transform: rotate(30deg);
+}
+.leg-1 {
+  background-color: #cc5300;
+  left: 7.75em;
+  bottom: 5.75em;
+}
+
+.leg-2 {
+  background-color: #aa4400;
+  left: 8.75em;
+  bottom: 5.75em;
+}
+
+.leg-1:before,
+.leg-2:before {
+  position: absolute;
+  content: "";
+  height: 1.25em;
+  width: 0.62em;
+  background-color: transparent;
+  border-radius: 0 1.87em 1.87em 0;
+  top: 2.5em;
+  left: 0.2em;
+}
+
+.leg-1:before {
+  border: 0.93em solid #cc5300;
+  border-left: none;
+}
+.leg-2:before {
+  border: 0.93em solid #aa4400;
+  border-left: none;
+}
+
+/*Animations*/
+
+@keyframes fly {
+  50% {
+    top: calc(50% + 2.12em);
+  }
+}
+
+@keyframes blink {
+  5% {
+    transform: scaleY(0);
+  }
+  10% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes flap {
+  50% {
+    transform: rotateX(80deg);
+  }
+}
+
+@keyframes caw-1 {
+  20% {
+    transform: rotate(-25deg);
+  }
+  30% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(-25deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes caw-2 {
+  20% {
+    transform: rotate(25deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(25deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  50% {
+  }
+}

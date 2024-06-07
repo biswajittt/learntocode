@@ -12,7 +12,7 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: #1f1f1f;
+  background-color: #212121;
 }
 
 .container {

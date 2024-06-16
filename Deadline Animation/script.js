@@ -4,12 +4,8 @@ var animationTime = 20,
   days = 7;
 
 $(document).ready(function () {
-  // timer arguments:
-  //   #1 - time of animation in mileseconds,
-  //   #2 - days to deadline
-
   $("#progress-time-fill, #death-group").css({
-    "animation-duration": animationTime + "s"
+    "animation-duration": animationTime + "s",
   });
 
   var deadlineAnimation = function () {

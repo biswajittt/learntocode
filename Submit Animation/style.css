@@ -1,0 +1,72 @@
+body {
+  text-align: center;
+  background-color: #212121;
+}
+
+.center-component {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button.colins-submit {
+  background: transparent;
+  border: none;
+}
+
+button.colins-submit.is-active {
+  cursor: default;
+}
+
+button.colins-submit:focus {
+  outline: none;
+}
+
+button.colins-submit::-moz-focus-inner {
+  border: 0;
+}
+
+button.colins-submit svg text {
+  font-family: "Montserrat", sans-serif;
+}
+
+button.colins-submit svg text.textNode {
+  fill: #1ecd97;
+}
+
+button.colins-submit svg text.checkNode {
+  fill-opacity: 0;
+}
+
+button.colins-submit svg rect.btn-shape.btn-bg {
+  stroke: #c8c8c8;
+  fill: #1f1f1f;
+}
+
+button.colins-submit svg rect.btn-shape.btn-color {
+  stroke: #1ecd97;
+  fill: #1f1f1f;
+  stroke-dasharray: 453;
+  stroke-dashoffset: 0;
+}
+
+p {
+  font-family: Montserrat, sans-serif;
+  color: #575757;
+  font-size: 1rem;
+  max-width: 330px;
+}
+
+p a {
+  color: #1ecd97;
+}
+
+p a:hover,
+p a:active {
+  color: #07e5a0;
+}
+
+p a:visited {
+  color: #36b68e;
+}

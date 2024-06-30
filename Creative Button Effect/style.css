@@ -1,0 +1,77 @@
+:root {
+  --primary-color: #c8dc71;
+  --gradient-color: linear-gradient(270deg, #ce6cec 0%, #dc717f 100%);
+  --gradient-color-2: linear-gradient(270deg, #c8dc71 0%, #6cece1 100%);
+  --radius: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #212121;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 13px 30px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: relative;
+  background: #000000;
+  transition: all 0.4s ease-in-out;
+}
+
+.button span {
+  color: #ffffff;
+  transition: color 0.4s ease-in-out;
+}
+
+.button:hover span {
+  color: var(--primary-color);
+}
+
+.button::after,
+.button::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s ease-in-out;
+  border-radius: var(--radius);
+  transform: translate(0px, 0px);
+}
+
+.button:hover::after {
+  transform: translate(8px, -8px);
+  z-index: -2;
+  background: var(--gradient-color-2);
+  transition: all 0.4s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translate(4px, -4px);
+  z-index: -1;
+  background: var(--gradient-color);
+  transition: all 0.4s ease-in-out;
+}
